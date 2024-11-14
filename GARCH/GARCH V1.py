@@ -35,3 +35,12 @@ forecasts = model_fit.forecast(horizon=forecast_horizon)
 variance_forecasts = forecasts.variance[-1:]
 print("Forecasted Variances:\n", variance_forecasts)
 
+# Get conditional volatility
+cond_vol = model_fit.conditional_volatility
+
+plt.figure(figsize=(10,6))
+plt.plot(cond_vol)
+plt.title('Conditional Volatility')
+plt.xlabel('Date')
+plt.ylabel('Volatility')
+plt.show()
